@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='ko'>
-      <body className='bg-gray-50 flex min-h-screen w-full justify-center'>
+      <body className='bg-gray-600 flex min-h-screen w-full justify-center'>
         {children}
       </body>
     </html>

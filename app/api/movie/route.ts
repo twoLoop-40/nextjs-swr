@@ -2,13 +2,15 @@ import { NextResponse } from "next/server";
 
 const dogsUrl = "https://dogs-api.nomadcoders.workers.dev";
 
-interface DogsResponse {
+export interface DogsResponse {
   ok: boolean;
-  data?: {
+  data: {
     url: string;
     isLiked: boolean;
   };
 }
+
+const fetchCache = "default-no-store";
 const GET = async () => {
   try {
     const data = await fetch(dogsUrl).then((res) => res.json());
@@ -18,3 +20,5 @@ const GET = async () => {
     return NextResponse.json({ ok: false } as DogsResponse);
   }
 };
+
+export { GET, fetchCache };
